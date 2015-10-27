@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<configSections>
+			<section name="ZippyMedia" type="System.Configuration.DictionarySectionHandler" />
+	</configSections>
+	<ZippyMedia configSource="config\ZippyMedia.config" />
+</configuration>

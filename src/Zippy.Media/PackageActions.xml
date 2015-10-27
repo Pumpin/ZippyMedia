@@ -1,0 +1,11 @@
+﻿<Action runat="install" undo="false" alias="AddXmlFragment" file="~/web.config" xpath="//configuration/configSections" position="end">
+	<section name="ZippyMedia" type="System.Configuration.DictionarySectionHandler" />
+</Action>
+<Action runat="install" undo="false" alias="AddXmlFragment" file="~/web.config" xpath="//configuration" position="end">
+	<ZippyMedia configSource="config\ZippyMedia.config" />
+</Action>
+<Action runat="uninstall" alias="RemoveXmlFragment" file="~/web.config" xpath="//configuration/ZippyMedia" />
+<Action runat="uninstall" alias="RemoveXmlFragment" file="~/web.config" xpath="//configuration/configSections[@name='ZippyMedia']" />
+
+
+
