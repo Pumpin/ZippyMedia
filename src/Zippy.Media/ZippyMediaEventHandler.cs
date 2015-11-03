@@ -19,7 +19,7 @@ namespace Zippy.Media
             
             if (sender.TreeAlias == "media" && mediaType.Equals("Folder"))
             {
-                var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP acrhive");
+                var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
                 menuItem.Icon = "compress";
                 menuItem.SeperatorBefore = true;
                 menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP acrhive");
@@ -30,7 +30,7 @@ namespace Zippy.Media
 
             if (sender.TreeAlias == "media" && Convert.ToInt32(e.NodeId) == Constants.System.Root)
             {
-                var menuItem = new MenuItem("uploadZipFile", "Upload ZIP acrhive");
+                var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
                 menuItem.Icon = "compress";
                 menuItem.SeperatorBefore = true;
                 menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP acrhive");

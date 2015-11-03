@@ -90,7 +90,10 @@ namespace Zippy.Media.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Gets the files from server. Not Implemented yet.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public HttpResponseMessage GetFilesFromServer()
         {
@@ -112,6 +115,7 @@ namespace Zippy.Media.Controllers
             }
             catch (Exception exception)
             {
+
                 throw;
             }
 

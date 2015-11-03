@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using ICSharpCode.SharpZipLib.Zip;
+using Umbraco.Core.Configuration;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Models;
 using Umbraco.Web;
@@ -67,6 +68,13 @@ namespace Zippy.Media.Services
                     using (var fileStream = new FileStream(file, FileMode.Open))
                     {
                         var fileInfo = new FileInfo(file);
+                        
+                        if (UmbracoConfig.For.UmbracoSettings().Content.DisallowedUploadFiles.Contains(fileInfo.Extension.Replace(".", "")))
+                        {
+                            //file is not allowed
+                            continue;
+                        }
+
                         var mediaType = "File"; //default 
                         if (Mappings.ContainsKey(fileInfo.Extension.ToLower()))
                             mediaType = Mappings[fileInfo.Extension];
