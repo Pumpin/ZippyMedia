@@ -22,7 +22,7 @@ namespace Zippy.Media
                 var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
                 menuItem.Icon = "compress";
                 menuItem.SeperatorBefore = true;
-                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP acrhive");
+                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP archive");
                 
                 e.Menu.Items.Add(menuItem);       
             }
@@ -33,7 +33,7 @@ namespace Zippy.Media
                 var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
                 menuItem.Icon = "compress";
                 menuItem.SeperatorBefore = true;
-                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP acrhive");
+                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP archive");
 
                 e.Menu.Items.Add(menuItem);  
 
@@ -47,7 +47,7 @@ namespace Zippy.Media
             //    var menuItem = new MenuItem("unpackZipFileFromServer", "Unpack ZIP from server");
             //    menuItem.Icon = "server";
             //    menuItem.SeperatorBefore = false;
-            //    menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Unpack-Zip.html", "Unpack ZIP acrhive from server");
+            //    menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Unpack-Zip.html", "Unpack ZIP archive from server");
 
             //    e.Menu.Items.Add(menuItem);
             //}
@@ -57,7 +57,7 @@ namespace Zippy.Media
             //    var menuItem = new MenuItem("unpackZipFileFromServer", "Unpack ZIP from server");
             //    menuItem.Icon = "server";
             //    menuItem.SeperatorBefore = false;
-            //    menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Unpack-Zip.html", "Unpack ZIP acrhive from server");
+            //    menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Unpack-Zip.html", "Unpack ZIP archive from server");
 
             //    e.Menu.Items.Add(menuItem);
 

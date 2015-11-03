@@ -36,6 +36,20 @@
 
     $scope.removeFile = function (index) {
         $scope.files = [];
+        
+        var ctrl = document.getElementById("zippy-file-upload");
+        try {
+            ctrl.value = null;
+        } catch(ex) {
+            //fail silent has nothing on a jedi ! cause we are in a older browser.
+        }
+        if (ctrl.value)
+        {
+            //replace the input in older browser
+            ctrl.parentNode.replaceChild(ctrl.cloneNode(true), ctrl);
+        }
+       
+
     };
 
 
