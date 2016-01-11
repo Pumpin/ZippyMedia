@@ -1,5 +1,4 @@
-﻿using System;
-using Umbraco.Core;
+﻿using Umbraco.Core;
 using Umbraco.Web.Trees;
 using MenuItem = Umbraco.Web.Models.Trees.MenuItem;
 
@@ -14,29 +13,26 @@ namespace Zippy.Media
 
         private void TreeControllerBase_MenuRendering(TreeControllerBase sender, MenuRenderingEventArgs e)
         {
-            var selectedMedia = ApplicationContext.Current.Services.MediaService.GetById(Convert.ToInt32(e.NodeId));
-            string mediaType = selectedMedia != null ? selectedMedia.ContentType.Alias : string.Empty;
-            
-            if (sender.TreeAlias == "media" && mediaType.Equals("Folder"))
+            int nodeId;
+            if (!int.TryParse(e.NodeId, out nodeId)) return;
+
+            var selectedMedia = ApplicationContext.Current.Services.MediaService.GetById(nodeId);
+            var mediaType = selectedMedia != null ? selectedMedia.ContentType.Alias : string.Empty;
+
+            if (sender.TreeAlias == "media" && (mediaType.Equals("Folder") || nodeId == Constants.System.Root))
             {
-                var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
-                menuItem.Icon = "compress";
-                menuItem.SeperatorBefore = true;
-                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP archive");
-                
-                e.Menu.Items.Add(menuItem);       
-            }
+                var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
+                var menuItemTitle = umbracoHelper.GetDictionaryValue("ZippyMedia.Labels.UploadZipFile");
 
+                if (string.IsNullOrWhiteSpace(menuItemTitle)) menuItemTitle = "Upload and Unpack ZIP";
+                var menuItem = new MenuItem("uploadZipFile", menuItemTitle)
+                {
+                    Icon = "compress",
+                    SeperatorBefore = true
+                };
+                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", menuItemTitle);
 
-            if (sender.TreeAlias == "media" && Convert.ToInt32(e.NodeId) == Constants.System.Root)
-            {
-                var menuItem = new MenuItem("uploadZipFile", "Upload and Unpack ZIP");
-                menuItem.Icon = "compress";
-                menuItem.SeperatorBefore = true;
-                menuItem.LaunchDialogView("/App_Plugins/zippyMedia/Views/Upload-Zip.html", "Upload and Unpack ZIP archive");
-
-                e.Menu.Items.Add(menuItem);  
-
+                e.Menu.Items.Add(menuItem);
             }
 
 
@@ -62,7 +58,7 @@ namespace Zippy.Media
             //    e.Menu.Items.Add(menuItem);
 
             //}
-            
+
         }
     }
 }
