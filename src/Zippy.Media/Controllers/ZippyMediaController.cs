@@ -115,7 +115,6 @@ namespace Zippy.Media.Controllers
             }
             catch (Exception exception)
             {
-
                 throw;
             }
 

@@ -76,6 +76,7 @@ namespace Zippy.Media.Services
                         }
 
                         var mediaType = "File"; //default 
+
                         if (Mappings.ContainsKey(fileInfo.Extension.ToLower()))
                             mediaType = Mappings[fileInfo.Extension];
 

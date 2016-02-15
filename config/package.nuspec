@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Zippy.Media</id>
+        <version><%= version %></version>
+        <title><%= name %></title>
+        <authors>TroelsLarsen</authors>
+        <owners>TroelsLarsen</owners>
+        <projectUrl>http://mypackage.local</projectUrl>
+        <description><![CDATA[foo]]></description>
+        <tags>umbraco</tags>
+        <iconUrl>http://mypackage.local/logo.png</iconUrl>
+        <licenseUrl><%= licenseUrl %></licenseUrl>
+        <dependencies>
+           
+        </dependencies>
+    </metadata>
+</package>
