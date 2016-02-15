@@ -4,6 +4,8 @@
 # Custom
 [Dd]ist/
 [Pp]kg/
+!lib/PackageActionsContrib.dll
+
 
 # User-specific files
 *.suo
