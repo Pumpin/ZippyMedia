@@ -3,13 +3,13 @@
     <metadata>
         <id>Zippy.Media</id>
         <version><%= version %></version>
-        <title><%= name %></title>
+        <title>Zippy Media Import</title>
         <authors>TroelsLarsen</authors>
         <owners>TroelsLarsen</owners>
-        <projectUrl>http://mypackage.local</projectUrl>
-        <description><![CDATA[foo]]></description>
-        <tags>umbraco</tags>
-        <iconUrl>http://mypackage.local/logo.png</iconUrl>
+        <projectUrl>https://our.umbraco.org/projects/backoffice-extensions/zippy-media-import/</projectUrl>
+        <description><![CDATA[Allows the user to upload and unpack zip files in umbraco media lib.]]></description>
+        <tags>Umbraco media libary</tags>
+<iconUrl>https://our.umbraco.org/media/wiki/151003/635809257300413067_icon_zipfile_mediaimport_50x50png.png</iconUrl>
         <licenseUrl><%= licenseUrl %></licenseUrl>
         <dependencies>
            
